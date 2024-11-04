@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-wrapper">
+            <div class="nav-left">
+                <a href="#" class="brand-logo">Logo</a>
+                <button class="mobile-toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="navigation-menu">
+                    <li>
+                        <a href="#"><i class="fas fa-home"></i><span>Home</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-file-signature"></i><span>Signed Deals</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="current"><i class="fas fa-info-circle"></i><span>Deal Information</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-chart-bar"></i><span>Dashboards</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-address-book"></i><span>Contacts</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-globe"></i><span>All News</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-shopping-cart"></i><span>Marketplace</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-cog"></i><span>Admin</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <button class="idea-submit-btn">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Submit Your Ideas!</span>
+                </button>
+                <div class="profile-icon"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-area">
+        <h1 class="main-title">Deal Information</h1>
+        
+        <div class="tab-container">
+            <ul class="tab-list">
+                <li class="tab-option">WRDM Funding Sources</li>
+                <li class="tab-option">Deal Process</li>
+                <li class="tab-option">Governance</li>
+                <li class="tab-option">Areas of Interest</li>
+                <li class="tab-option active">What to do if...</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 class="sub-title">What to do if...</h2>
+            <p class="instruction-text">Select the topic below to see what you should do in each scenario</p>
+            
+            <div class="accordion-container">
+                <div class="accordion-section">
+                    <button class="accordion-trigger">
+                        <span class="text-blue">...You are at a meeting and find a potential WRD external opportunity of interest</span>
+                    </button>
+                    <div class="accordion-details text-blue">
+                        If you identify a potential external opportunity during a meeting, it's crucial to document the details immediately. Note the nature of the opportunity, the stakeholders involved, and any relevant timelines. After the meeting, reach out to your supervisor or the appropriate department within WRD to discuss the next steps and how to formally present the opportunity.
+                    </div>
+                </div>
+
+                <div class="accordion-section">
+                    <button class="accordion-trigger">
+                        <span class="text-blue">...You want to know WRD's partnering areas of interest</span> 
+                    </button>
+                    <div class="accordion-details text-blue">
+                        To understand WRD's partnering areas of interest, consult the company's partnership strategy documents or reach out to the Business Development team. They can provide insights into current initiatives, preferred partners, and the strategic goals that guide partnerships. This knowledge will help align potential collaborations with WRD's objectives.
+                    </div>
+                </div>
+
+                <div class="accordion-section">
+                    <button class="accordion-trigger">
+                        <span class="text-blue"> ...you get approached by a non-employee with a potential WRD external opportunity of interest</span> 
+                    </button>
+                    <div class="accordion-details text-blue">
+                        When approached by a non-employee regarding an external opportunity, ensure that you gather comprehensive information about the proposal. Encourage them to submit a formal inquiry or proposal through the appropriate channels. Report this interaction to your manager to evaluate the potential alignment with WRD's interests and compliance with company policies.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-text">
+            © 2024 i2e_Vedanshi Inc. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggleBtn = document.querySelector('.mobile-toggle-btn');
+        const navigationMenu = document.querySelector('.navigation-menu');
+
+        mobileToggleBtn.addEventListener('click', () => {
+            navigationMenu.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.accordion-trigger').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                const content = accordionItem.querySelector('.accordion-details');
+                const isActive = accordionItem.classList.toggle('active');
+                content.style.display = isActive ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
